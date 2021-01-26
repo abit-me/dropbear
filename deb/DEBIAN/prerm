@@ -1,0 +1,10 @@
+#!/bin/sh
+# 这个文件最后一行必须留空
+#
+# 软件卸载前需要执行的脚本。
+
+echo "[prerm] launchctl unload /Library/LaunchDaemons/com.cracj.dropbear.plist"
+launchctl unload /Library/LaunchDaemons/com.cracj.dropbear.plist
+
+
+

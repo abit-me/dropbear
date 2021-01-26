@@ -1,0 +1,10 @@
+Package: com.cracj.dropbear
+Name: dropbear
+Depends: 
+Version: 2020.81
+Architecture: iphoneos-arm
+Description: dropbear for iOS
+Maintainer: A
+Author: A
+Section: System
+Tag: role::hacker

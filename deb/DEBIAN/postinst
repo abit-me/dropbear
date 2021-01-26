@@ -1,0 +1,22 @@
+#!/bin/sh
+#这个文件最后一行必须留空
+
+# 包含了软件在进行正常目录文件拷贝到系统后，所需要执行的配置工作。
+
+# 签名
+echo "[postinst] codesign dropbear"
+ldid -S/var/root/dropbear_ent.plist /usr/bin/dbclient
+ldid -S/var/root/dropbear_ent.plist /usr/bin/dropbear
+ldid -S/var/root/dropbear_ent.plist /usr/bin/dropbearconvert
+ldid -S/var/root/dropbear_ent.plist /usr/bin/dropbearkey
+ldid -S/var/root/dropbear_ent.plist /usr/bin/scp
+
+rm /var/root/dropbear_ent.plist
+
+echo "[postinst] chown com.cracj.dropbear.plist"
+chown root:wheel /Library/LaunchDaemons/com.cracj.dropbear.plist
+echo "[postinst] chmod com.cracj.dropbear.plist"
+chmod 644 /Library/LaunchDaemons/com.cracj.dropbear.plist
+launchctl load /Library/LaunchDaemons/com.cracj.dropbear.plist
+
+

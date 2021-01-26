@@ -1,0 +1,7 @@
+#!/bin/sh
+# 这个文件最后一定要留空行
+
+echo "[preinst done]"
+
+
+
